@@ -6,6 +6,9 @@ $("#start").on("click", function() {
 $(document).on('click', '.answer-button', function(e) {
     game.clicked(e);
 })
+$(document).on('click', '#reset', function() {
+    game.reset();
+})
 
 var questions = [{
     question: "What color was the car that Adam and Barbara had?",
@@ -69,6 +72,7 @@ var game = {
     counter: 30,
     correct: 0,
     incorrect: 0,
+    unanswered: 0,
     countdown: function() {
         game.counter--;
         $("#counter").html(game.counter);
@@ -79,7 +83,8 @@ var game = {
     },
     loadQuestion: function() {
         timer = setInterval(game.countdown, 1000);
-        $("#subwrapper").html("<h2>" + questions[game.currentQuestion].question + "</h2>");
+        $('#subwrapper').html("<h2>TIME REMAINING<span id= 'counter'>30</span>Seconds</h2>");
+        $("#subwrapper").append("<h2>" + questions[game.currentQuestion].question + "</h2>");
         for (var i = 0; i < questions[game.currentQuestion].answers.length; i++) {
             $('#subwrapper').append('<button class= "answer-button" id="button-' + i + '" data-name="' + questions[game.currentQuestion].answers[i] + '">' + questions[game.currentQuestion].answers[i] + '</button>');
 
@@ -93,6 +98,7 @@ var game = {
     },
     timeUp: function() {
         clearInterval(timer);
+        game.unanswered++;
         $('#subwrapper').html('<h2>OUT OF TIME!</h2>');
         $('#subwrapper').append('<h3>The correct answer was: ' + questions[game.currentQuestion].correctAnswer + '</h3>');
         if (game.currentQuestion == questions.length - 1) {
@@ -102,7 +108,12 @@ var game = {
         }
     },
     results: function() {
-
+        clearInterval(timer);
+        $('#subwrapper').html('<h2>All DONE!</h2>');
+        $('#subwrapper').append("<h3>Correct: " + game.correct + "</h3>");
+        $('#subwrapper').append("<h3>Incorrect " + game.incorrect + "</h3>");
+        $('#subwrapper').append("<h3>Unanswered " + game.unanswered + "</h3>");
+        $('#subwrapper').append("<button id = 'reset'>RESET</button>");
     },
     clicked: function(e) {
         clearInterval(timer);
@@ -136,6 +147,12 @@ var game = {
         }
     },
     reset: function() {
+        game.currentQuestion = 0;
+        game.counter = 0;
+        game.correct = 0;
+        game.incorrect = 0;
+        game.unanswered = 0;
+        game.loadQuestion();
 
     }
 }
