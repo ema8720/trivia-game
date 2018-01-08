@@ -14,7 +14,7 @@ var questions = [{
     question: "What color was the car that Adam and Barbara had?",
     answers: ["White", "Blue", "Yellow", "Red"],
     correctAnswer: "Yellow",
-    image: ""
+    image: "../images/yellow-giphy.gif"
 
 }, {
     question: "What color does Otho say Viridian is?",
@@ -83,7 +83,7 @@ var game = {
     },
     loadQuestion: function() {
         timer = setInterval(game.countdown, 1000);
-        $('#subwrapper').html("<h2>TIME REMAINING<span id= 'counter'>30</span>Seconds</h2>");
+        $('#subwrapper').html("<h2>TIME REMAINING <span id= 'counter'>30</span> Seconds</h2>");
         $("#subwrapper").append("<h2>" + questions[game.currentQuestion].question + "</h2>");
         for (var i = 0; i < questions[game.currentQuestion].answers.length; i++) {
             $('#subwrapper').append('<button class= "answer-button" id="button-' + i + '" data-name="' + questions[game.currentQuestion].answers[i] + '">' + questions[game.currentQuestion].answers[i] + '</button>');
@@ -127,7 +127,7 @@ var game = {
         console.log("You Got it!");
         clearInterval(timer);
         game.correct++;
-        $("#subwrapper").html('<h2>YOU GOT IT RIGHT</h2>');
+        $("#subwrapper").html('<h2>YOU GOT IT RIGHT!</h2>');
         if (game.currentQuestion == questions.length - 1) {
             setTimeout(game.results, 3 * 1000);
         } else {
