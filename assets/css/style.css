@@ -1,0 +1,26 @@
+ .bg {
+     /* The image used */
+     background-image: url(../images/test2.png);
+     /* Full height */
+     width: 100%;
+     /* Center and scale the image nicely */
+     background-position: auto;
+     /* background-repeat: no-repeat; */
+     background-size: cover;
+     background-repeat: no-repeat;
+     color: white;
+     /* font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif */
+     font-family: 'Fontdiner Swanky', cursive;
+ }
+ 
+ h1 {
+     text-align: center;
+ }
+ 
+ .adjust {
+     align-content: center;
+ }
+ 
+ #subwrapper {
+     text-align: center;
+ }

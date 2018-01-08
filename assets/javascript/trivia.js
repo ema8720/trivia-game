@@ -14,58 +14,58 @@ var questions = [{
     question: "What color was the car that Adam and Barbara had?",
     answers: ["White", "Blue", "Yellow", "Red"],
     correctAnswer: "Yellow",
-    image: "../images/yellow-giphy.gif"
+    image: "../images/question-1.gif"
 
 }, {
     question: "What color does Otho say Viridian is?",
     answers: ["Blue/Purple", "Red/Orange", "Blue/Green", "Yellow"],
     correctAnswer: "Blue/Green",
-    image: ""
+    image: "../images/question-2.gif"
 
 
 }, {
     question: "Delia is an artist.",
     answers: ["True", "False"],
     correctAnswer: "True",
-    image: ""
+    image: "../images/question-3.gif"
 
 }, {
     question: "What game does Beetlejuice play with Lydia to get her to guess his name?",
     answers: ["Charades", "Scrabble", "20 Questions", "Clue"],
     correctAnswer: "Charades",
-    image: ""
+    image: "../images/question-4.gif"
 
 }, {
     question: "Where did Adam and Barbara live?",
     answers: ["Winter River, Pennsylvania", " Winter River, Maine", "Winter River, New Hampshire", "Winter River, Connecticut"],
     correctAnswer: "Winter River, Connecticut",
-    image: ""
+    image: "../images/question-5.gif"
 
 
 }, {
     question: "What is the name of Adam and Barbara's caseworker??",
     answers: ["Jenna", "Jennifer", "Juno", "Julie"],
     correctAnswer: "Juno",
-    image: ""
+    image: "../images/question-6.gif"
 
 
 }, {
     question: "Who takes credit for decorating Adam and Barbara's home?",
     answers: ["Barbara", "Jane", "Adam", "Delia"],
     correctAnswer: "Jane",
-    image: ""
+    image: "../images/question-7.gif"
 }, {
     question: "What kind of food do the Deetzes have for dinner their first night in the house?",
     answers: ["Mongolian", "Japanese", "Cantonese", "Fast Food"],
     correctAnswer: "Cantonese",
-    image: ""
+    image: "../images/question-8.gif"
 }, {
     question: "Do Lydia and Beetlejuice end up as a married couple at the end of the movie",
     answers: ["Yes", "No"],
     correctAnswer: "Yes",
-    image: ""
+    image: "../images/question-9.gif"
 }];
-
+//var pictures = [ "../images/question-9.gif"]
 var game = {
     questions: questions,
     currentQuestion: 0,
@@ -111,9 +111,10 @@ var game = {
         clearInterval(timer);
         $('#subwrapper').html('<h2>All DONE!</h2>');
         $('#subwrapper').append("<h3>Correct: " + game.correct + "</h3>");
-        $('#subwrapper').append("<h3>Incorrect " + game.incorrect + "</h3>");
-        $('#subwrapper').append("<h3>Unanswered " + game.unanswered + "</h3>");
+        $('#subwrapper').append("<h3>Incorrect: " + game.incorrect + "</h3>");
+        $('#subwrapper').append("<h3>Unanswered: " + game.unanswered + "</h3>");
         $('#subwrapper').append("<button id = 'reset'>RESET</button>");
+        $('#display').append("<id = '../images/question-9.gif'>");
     },
     clicked: function(e) {
         clearInterval(timer);
@@ -153,6 +154,7 @@ var game = {
         game.incorrect = 0;
         game.unanswered = 0;
         game.loadQuestion();
+        //  game.image =0;
 
     }
 }
