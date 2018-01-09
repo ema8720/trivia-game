@@ -1,26 +1,61 @@
- .bg {
-     /* The image used */
-     background-image: url(../images/test2.png);
-     /* Full height */
-     width: 100%;
-     /* Center and scale the image nicely */
-     background-position: auto;
-     /* background-repeat: no-repeat; */
-     background-size: cover;
-     background-repeat: no-repeat;
-     color: white;
-     /* font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif */
-     font-family: 'Fontdiner Swanky', cursive;
- }
- 
- h1 {
-     text-align: center;
- }
- 
- .adjust {
-     align-content: center;
- }
- 
- #subwrapper {
-     text-align: center;
- }
+.bg {
+    background-color: black;
+    background-image: url("../images/test2.png");
+    /* Full height */
+    width: 100%;
+    /* Center and scale the image nicely */
+    background-position: auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    /* font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif */
+    font-family: 'Fontdiner Swanky', cursive;
+}
+
+.playField {
+    background-color: black;
+    color: white;
+    opacity: 90%;
+    height: 100%;
+}
+
+.playFieldTitle {
+    font-family: "gotFont";
+    font-size: 45px;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.btn {
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+}
+
+.playArea {
+    font-size: 20px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+#image-holder {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+h1 {
+    text-align: center;
+}
+
+.adjust {
+    align-content: center;
+}
+
+#subwrapper {
+    text-align: center;
+}
